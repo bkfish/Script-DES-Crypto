@@ -64,7 +64,7 @@ def LS(data, amount):
 def SW(data):
     data1, data2 = split_half(data)
     return data2 + data1
-
+    
 def split_half(data):
     return data[:int(len(data) / 2)], data[int(len(data) / 2):]
 
@@ -144,13 +144,13 @@ def decrypt(data, key, comments=False):
 
 
 if __name__ == "__main__":
-    print("需要加密的密文为: {} ({})".format(plaintext, bin_to_ascii_4bit(plaintext)))
+    print("需要加密的明文为: {} ({})".format(plaintext, bin_to_ascii_4bit(plaintext)))
     print("Key: {}".format(K))
 
     print("\n以下是加密的过程\n-------------------\n")
     C= encrypt(plaintext,K)
-    print("加密后的明文为:  {} ({})".format(C, bin_to_ascii_4bit(C)))
+    print("加密后的密文为:  {} ({})".format(C, bin_to_ascii_4bit(C)))
 
     print("\n以下是解密的过程\n-------------------\n")
     d = decrypt(C, K, comments=True)
-    print("解密后的密文是: {} ({})".format(d, bin_to_ascii_4bit(d)))
+    print("解密后的明文是: {} ({})".format(d, bin_to_ascii_4bit(d)))
